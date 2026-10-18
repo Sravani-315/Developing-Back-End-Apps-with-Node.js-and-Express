@@ -1,21 +1,61 @@
-TASK 1: GitHub Repository
-=========================
+TASK 1: GitHub Repository Fork Verification
+============================================
 
-GitHub Repository URL:
-https://github.com/Sravani-315/Developing-Back-End-Apps-with-Node.js-and-Express
+INSTRUCTIONS TO COMPLETE THIS TASK:
+-----------------------------------
 
-Command to verify repository:
-curl -s https://api.github.com/repos/Sravani-315/Developing-Back-End-Apps-with-Node.js-and-Express
+1. Go to: https://github.com/ibm-developer-skills-network/expressBookReviews
+2. Click the "Fork" button (top right)
+3. Select your account (Sravani-315)
+4. After forking, clone and add your code:
 
-Repository Status:
-✅ Code successfully pushed to GitHub
-✅ All project files uploaded
-✅ Ready for submission
+   git clone https://github.com/Sravani-315/expressBookReviews.git
+   cd expressBookReviews
+   
+   # Copy all your files from current directory
+   # Then commit and push:
+   git add .
+   git commit -m "Add complete Express Book Review application"
+   git push origin main
 
-Note: This repository contains the complete Express Book Review application.
+5. Run the verification command below
 
-Additional Information:
-- Repository Name: Developing-Back-End-Apps-with-Node.js-and-Express
-- Owner: Sravani-315
-- Contains: All source code, documentation, and submission files
-- Branch: main
+
+COMMAND:
+--------
+curl -s https://api.github.com/repos/Sravani-315/expressBookReviews | grep -E '"fork"|"full_name"' | head -5
+
+
+EXPECTED OUTPUT (after forking):
+---------------------------------
+  "full_name": "Sravani-315/expressBookReviews",
+  "fork": true,
+  "parent": {
+    "full_name": "ibm-developer-skills-network/expressBookReviews",
+
+
+ALTERNATIVE VERIFICATION COMMAND:
+----------------------------------
+curl -s https://api.github.com/repos/Sravani-315/expressBookReviews
+
+
+EXPECTED OUTPUT INCLUDES:
+-------------------------
+{
+  "name": "expressBookReviews",
+  "full_name": "Sravani-315/expressBookReviews",
+  "owner": {
+    "login": "Sravani-315",
+    ...
+  },
+  "fork": true,
+  "parent": {
+    "full_name": "ibm-developer-skills-network/expressBookReviews",
+    "owner": {
+      "login": "ibm-developer-skills-network"
+    }
+  },
+  ...
+}
+
+Note: The "fork": true and "parent" fields prove your repository is forked from IBM's repository.

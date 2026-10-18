@@ -1,11 +1,21 @@
 TASK 11: GitHub URL for general.js
 ====================================
 
-GitHub URL for general.js file containing async/await implementation:
+AFTER FORKING IBM REPOSITORY, SUBMIT THIS URL:
+-----------------------------------------------
 
+https://github.com/Sravani-315/expressBookReviews/blob/main/router/general.js
+
+
+CURRENT URL (Before Fork):
+--------------------------
 https://github.com/Sravani-315/Developing-Back-End-Apps-with-Node.js-and-Express/blob/main/router/general.js
 
-This file contains the following async/await implementations with Axios:
+
+WHAT THIS FILE CONTAINS:
+------------------------
+
+The general.js file contains the following async/await implementations with Axios:
 
 1. getAllBooks() - Retrieves all books using async/await
 2. getBookByISBN(isbn) - Retrieves book by ISBN using async/await
@@ -14,8 +24,20 @@ This file contains the following async/await implementations with Axios:
 
 All implementations use Promise callbacks with async/await and Axios for concurrent operations.
 
-Direct link to view the code:
-https://github.com/Sravani-315/Developing-Back-End-Apps-with-Node.js-and-Express/blob/main/router/general.js
 
-Raw file URL:
-https://raw.githubusercontent.com/Sravani-315/Developing-Back-End-Apps-with-Node.js-and-Express/main/router/general.js
+ENDPOINTS TO TEST ASYNC IMPLEMENTATION:
+---------------------------------------
+GET http://localhost:5000/async/books
+GET http://localhost:5000/async/isbn/1
+GET http://localhost:5000/async/author/Jane%20Austen
+GET http://localhost:5000/async/title/Things%20Fall%20Apart
+
+
+INSTRUCTIONS:
+-------------
+1. Fork: https://github.com/ibm-developer-skills-network/expressBookReviews
+2. Copy your code to the forked repository
+3. Push to GitHub
+4. Submit the URL: https://github.com/Sravani-315/expressBookReviews/blob/main/router/general.js
+
+See COMPLETE_FORK_GUIDE.md for detailed step-by-step instructions.
