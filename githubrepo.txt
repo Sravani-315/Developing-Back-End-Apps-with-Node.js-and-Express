@@ -1,29 +1,30 @@
 TASK 1: GitHub Repository Fork Verification
 ============================================
 
-INSTRUCTIONS TO COMPLETE THIS TASK:
------------------------------------
+⚠️ YOU MUST COMPLETE THE FORK FIRST ⚠️
+--------------------------------------
 
-1. Go to: https://github.com/ibm-developer-skills-network/expressBookReviews
-2. Click the "Fork" button (top right)
-3. Select your account (Sravani-315)
-4. After forking, clone and add your code:
+STEP-BY-STEP INSTRUCTIONS:
+--------------------------
 
-   git clone https://github.com/Sravani-315/expressBookReviews.git
-   cd expressBookReviews
+1. Open browser and go to:
+   https://github.com/ibm-developer-skills-network/expressBookReviews
+
+2. Click the "Fork" button (top-right corner)
+
+3. Select "Sravani-315" as the destination
+
+4. After fork is created, run the automated migration:
    
-   # Copy all your files from current directory
-   # Then commit and push:
-   git add .
-   git commit -m "Add complete Express Book Review application"
-   git push origin main
+   cd "S:\Developing Back-End Apps with Node.js and Express"
+   .\migrate_to_fork.ps1
 
-5. Run the verification command below
+5. Then run the verification command below
 
 
-COMMAND:
---------
-curl -s https://api.github.com/repos/Sravani-315/expressBookReviews | grep -E '"fork"|"full_name"' | head -5
+COMMAND FOR SUBMISSION:
+-----------------------
+curl -s https://api.github.com/repos/Sravani-315/expressBookReviews | grep -E '"fork"|"full_name"|"parent"' | head -5
 
 
 EXPECTED OUTPUT (after forking):
@@ -34,28 +35,27 @@ EXPECTED OUTPUT (after forking):
     "full_name": "ibm-developer-skills-network/expressBookReviews",
 
 
-ALTERNATIVE VERIFICATION COMMAND:
+ALTERNATIVE COMMAND (PowerShell):
 ----------------------------------
-curl -s https://api.github.com/repos/Sravani-315/expressBookReviews
+Invoke-RestMethod -Uri https://api.github.com/repos/Sravani-315/expressBookReviews | Select-Object name,full_name,fork,@{Name='parent';Expression={$_.parent.full_name}}
 
 
-EXPECTED OUTPUT INCLUDES:
--------------------------
-{
-  "name": "expressBookReviews",
-  "full_name": "Sravani-315/expressBookReviews",
-  "owner": {
-    "login": "Sravani-315",
-    ...
-  },
-  "fork": true,
-  "parent": {
-    "full_name": "ibm-developer-skills-network/expressBookReviews",
-    "owner": {
-      "login": "ibm-developer-skills-network"
-    }
-  },
-  ...
-}
+EXPECTED POWERSHELL OUTPUT:
+---------------------------
+name              : expressBookReviews
+full_name         : Sravani-315/expressBookReviews
+fork              : True
+parent            : ibm-developer-skills-network/expressBookReviews
 
-Note: The "fork": true and "parent" fields prove your repository is forked from IBM's repository.
+
+WHAT TO SUBMIT FOR TASK 1:
+---------------------------
+Copy the COMMAND above and its OUTPUT showing:
+- "fork": true
+- "parent": { "full_name": "ibm-developer-skills-network/expressBookReviews" }
+
+This proves your repository is correctly forked from the IBM repository.
+
+
+❗ CURRENT STATUS: Fork not created yet
+➡️  Follow steps 1-4 above to complete the fork
