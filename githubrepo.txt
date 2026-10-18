@@ -1,0 +1,21 @@
+TASK 1: GitHub Repository
+=========================
+
+GitHub Repository URL:
+https://github.com/Sravani-315/Developing-Back-End-Apps-with-Node.js-and-Express
+
+Command to verify repository:
+curl -s https://api.github.com/repos/Sravani-315/Developing-Back-End-Apps-with-Node.js-and-Express
+
+Repository Status:
+✅ Code successfully pushed to GitHub
+✅ All project files uploaded
+✅ Ready for submission
+
+Note: This repository contains the complete Express Book Review application.
+
+Additional Information:
+- Repository Name: Developing-Back-End-Apps-with-Node.js-and-Express
+- Owner: Sravani-315
+- Contains: All source code, documentation, and submission files
+- Branch: main
